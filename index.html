@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self'; style-src 'self'; img-src 'self' data:; font-src 'self'; connect-src 'none'; object-src 'none'; base-uri 'none'; form-action 'none'">
+    <meta name="referrer" content="no-referrer">
+    <meta name="description" content="Corrige tus diarios TXT en tu navegador. Tus archivos se procesan en tu equipo, sin subirlos a un servidor.">
+    <title>Corrector de TXT</title>
+    <link rel="icon" href="./assets/icon.svg" type="image/svg+xml">
+    <link rel="stylesheet" href="./styles.css">
+    <script type="module" src="./app.js"></script>
+  </head>
+  <body>
+    <div class="page-shell">
+      <header class="masthead">
+        <a class="brand" href="#inicio" aria-label="Corrector de TXT, inicio"><span class="brand-symbol" aria-hidden="true">T<span>↗</span></span><span>Herramientas de trabajo</span></a>
+        <span class="local-badge"><span aria-hidden="true">●</span> Procesamiento local</span>
+      </header>
+
+      <main id="inicio">
+        <section class="intro" aria-labelledby="page-title">
+          <p class="eyebrow">SIMPLE. LOCAL. VERIFICADO.</p>
+          <h1 id="page-title">Corrector de TXT<span class="title-dot">.</span></h1>
+          <p class="intro-copy">Corrige tus diarios y descarga una copia lista para usar.<br class="desktop-break"> Tus archivos permanecen en tu equipo.</p>
+          <div class="rule-chip"><span class="rule-label">La corrección</span><strong>10 <span aria-hidden="true">→</span><span class="sr-only">a</span> 01</strong><span>antes de <strong>2026</strong></span></div>
+        </section>
+
+        <section class="workspace" aria-labelledby="upload-title">
+          <div class="section-heading"><div><span class="step-number" aria-hidden="true">01</span><h2 id="upload-title">Agrega tus archivos</h2></div><span class="format-tag">.TXT</span></div>
+          <div class="drop-zone" id="drop-zone">
+            <span class="upload-symbol" aria-hidden="true">↥</span>
+            <h3>Arrastra aquí tus archivos TXT</h3>
+            <p>o selecciónalos desde tu equipo</p>
+            <button class="button button-primary" type="button" id="choose-files">Seleccionar archivos <span aria-hidden="true">+</span></button>
+            <input id="file-input" class="sr-only" type="file" accept=".txt,text/plain" multiple tabindex="-1" aria-label="Seleccionar archivos TXT" aria-describedby="file-limits">
+            <p class="file-limits" id="file-limits">Hasta 20 archivos · 5 MiB por archivo · 20 MiB en total</p>
+          </div>
+          <p class="privacy-note"><span class="privacy-icon" aria-hidden="true">✓</span> Solo se modifica el campo indicado. El resto del archivo se conserva exactamente.</p>
+          <p class="session-message" id="session-message" role="status" aria-live="polite" aria-atomic="true">Todo listo para comenzar.</p>
+
+          <section class="results" id="results" aria-labelledby="results-title" hidden>
+            <div class="results-heading"><div><span class="step-number" aria-hidden="true">02</span><h2 id="results-title">Tus resultados <span class="file-count" id="file-count">0</span></h2></div><button type="button" class="button button-clear" id="clear-files">Limpiar archivos</button></div>
+            <ul class="file-list" id="file-list" aria-label="Resultados por archivo"></ul>
+            <p class="download-note">Las copias se descargan con el sufijo <strong>_corregido.txt</strong>. Tus originales se conservan.</p>
+          </section>
+        </section>
+
+        <section class="how-it-works" aria-label="Cómo funciona">
+          <div><span class="small-step">1</span><p><strong>Selecciona</strong><span>Uno o varios diarios TXT.</span></p></div>
+          <div><span class="small-step">2</span><p><strong>Revisa</strong><span>La corrección se valida por línea.</span></p></div>
+          <div><span class="small-step">3</span><p><strong>Descarga</strong><span>Una copia por cada archivo corregido.</span></p></div>
+        </section>
+        <noscript><p class="noscript">Activa JavaScript para corregir los archivos en este navegador. No se envían a ningún servidor.</p></noscript>
+      </main>
+      <footer><span>Hecho para simplificar una tarea.</span><span>Sin subidas. Sin historial.</span></footer>
+    </div>
+  </body>
+</html>
